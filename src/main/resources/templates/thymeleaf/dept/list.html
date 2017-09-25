@@ -1,8 +1,8 @@
 <!DOCTYPE html>
-<html xmls="http://www.thymeleaf.org">
+<html xmlns="http://www.thymeleaf.org">
 <head>
 <meta charset="UTF-8">
-<title>hello.html</title>
+<title>list.html</title>
 <!--/*/ 
 <link rel="stylesheet" href="/webjars/bootstrap/3.3.7/css/bootstrap.css">
 <link rel="stylesheet" href="/webjars/animate.css/3.5.2/animate.css">
@@ -11,32 +11,29 @@
 <link rel="stylesheet" href="../css/animate.css" data-th-remove="all">
 </head>
 <body>
-	<h1>Hello Thymeleaf !</h1>
-	<h2 data-th-text="${'thymeleaf text 출력 테스트'}"></h2>
-	<p class="animated swing" data-th-text="${depts}"></p>
-	<hr>
-	<table
-		class="table table-hover table-striped table-bordered animated bounceIn">
-		<thead>
-			<tr>
-				<th>deptno</th>
-				<th>dname</th>
-				<th>loc</th>
-			</tr>
-		</thead>
-		<tfoot>
-		</tfoot>
-		<tbody>
-			<tr data-th-each="d : ${depts}">
-				<td data-th-text="${d.deptno}">deptno</td>
-				<td data-th-text="${d.dname}">dname</td>
-				<td data-th-text="${d.loc}">loc</td>
-			</tr>
-		</tbody>
-	</table>
-	<hr>
-	<ul data-th-with="xxx=${depts}" class="list-group animated fadeOut">
-		<li data-th-text="${xxx}" class="list-group-item"></li>
-	</ul>
+<h1>Hello Thymeleaf!</h1>
+<h2 data-th-text="${'Thymeleaf Text 출력 테스트'}"></h2>
+<p class="animated swing" data-th-text="${depts}"></p>
+<hr>
+<table class="table table-hover table-striped table-bordered animated bounce">
+	<thead>
+		<tr>
+			<th>deptno</th><th>dname</th><th>loc</th>
+		</tr>	
+	</thead>
+	<tfoot>
+	</tfoot>
+	<tbody>
+		<tr data-th-each="d : ${depts}">
+			<td data-th-text="${d.deptno}">deptno</td>
+			<td data-th-text="${d.dname}">dname</td>
+			<td data-th-text="${d.loc}">loc</td>
+		</tr>	
+	</tbody>
+</table>
+<hr>
+<ul data-th-with="xxx=${depts}" class="list-group animated fadeIn">
+	<li data-th-text="${xxx}" class="list-group-item"></li>
+</ul>
 </body>
 </html>

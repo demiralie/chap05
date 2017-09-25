@@ -6,5 +6,4 @@ import com.example.domain.DeptVO;
 
 public interface DeptRepository extends JpaRepository<DeptVO, Integer>{
 
-	
 }

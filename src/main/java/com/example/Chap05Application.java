@@ -12,16 +12,5 @@ public class Chap05Application {
 	public static void main(String[] args) {
 		SpringApplication.run(Chap05Application.class, args);
 	}
-
-	@Bean
-	InternalResourceViewResolver jspView() {
-		InternalResourceViewResolver vr = new InternalResourceViewResolver();
-		vr.setPrefix("/WEB-INF/");
-		vr.setSuffix(".jsp");
-		vr.setViewNames("jsp/*");
-		vr.setViewClass(JstlView.class);
-		
-		return vr;
-	}
 	
 }

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html xmlns="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>bar2</title>
+</head>
+<body>
+
+	<h1 align="center" class="animated bounce">Bar Chart Thymeleaf</h1>
+	<hr>
+		<h2 th:inline="text">[[${depts[0].deptno}]], [[${depts[0].dname}]]</h2>
+		<canvas id="dept01" class="animated fadeInRight"></canvas>
+	<hr>
+		<h2 th:inline="text">[[${depts[1].deptno}]], [[${depts[1].dname}]]</h2>
+		<canvas id="dept02" class="animated fadeInUp"></canvas>
+	<hr>
+		<h2 th:inline="text">[[${depts[2].deptno}]], [[${depts[2].dname}]]</h2>
+		<canvas id="dept03" class="animated fadeInDown"></canvas>
+	<hr>
+		<h2 th:inline="text">[[${depts[3].deptno}]], [[${depts[3].dname}]]</h2>
+		<canvas id="dept04" class="animated fadeInLeft"></canvas>
+	
+
+	<script type="text/javascript" th:inline="javascript">
+		var data01 = [[${bars[0]}]];
+		var ctx = document.getElementById("dept01").getContext("2d"); 
+		new Chart(ctx, data01);
+		
+		var data02 = [[${bars[1]}]];
+		var ctx = document.getElementById("dept02").getContext("2d"); 
+		new Chart(ctx, data02);
+		
+		var data03 = [[${bars[2]}]];
+		var ctx = document.getElementById("dept03").getContext("2d"); 
+		new Chart(ctx, data03);
+		
+		var data04 = [[${bars[3]}]];
+		var ctx = document.getElementById("dept04").getContext("2d"); 
+		new Chart(ctx, data04);
+	</script>
+
+</body>
+</html>

@@ -86,6 +86,7 @@
 			<artifactId>bootstrap</artifactId>
 			<version>3.3.7</version>
 		</dependency>
+		<!-- webjars -->
 		<dependency>
 			<groupId>org.webjars</groupId>
 			<artifactId>animate.css</artifactId>
@@ -95,6 +96,34 @@
 			<groupId>javax.inject</groupId>
 			<artifactId>javax.inject</artifactId>
 			<version>1</version>
+		</dependency>
+		<dependency>
+			<groupId>com.hazelcast</groupId>
+			<artifactId>hazelcast</artifactId>
+		</dependency>
+		<!-- layout -->
+		<!-- https://mvnrepository.com/artifact/nz.net.ultraq.thymeleaf/thymeleaf-layout-dialect -->
+		<dependency>
+			<groupId>nz.net.ultraq.thymeleaf</groupId>
+			<artifactId>thymeleaf-layout-dialect</artifactId>
+		</dependency>
+		<!-- Chart -->
+		<!-- https://mvnrepository.com/artifact/be.ceau/chart -->
+		<dependency>
+			<groupId>be.ceau</groupId>
+			<artifactId>chart</artifactId>
+			<version>2.3.1</version>
+		</dependency>
+		<!-- https://mvnrepository.com/artifact/org.webjars/chartjs -->
+		<dependency>
+			<groupId>org.webjars</groupId>
+			<artifactId>chartjs</artifactId>
+			<version>2.6.0</version>
+		</dependency>
+		<dependency>
+			<groupId>org.sitemesh</groupId>
+			<artifactId>sitemesh</artifactId>
+			<version>3.0.1</version>
 		</dependency>
 	</dependencies>
 

@@ -1,12 +1,27 @@
 <!DOCTYPE html>
-<html xmls="http://www.thymeleaf.org">
+<html xmlns="http://www.thymeleaf.org">
 <head>
 <meta charset="UTF-8">
-<title>hello.html</title>
+<title>Hello.html</title>
 </head>
 <body>
-<h1> Hello Thymeleaf!</h1>
-<h2 th:text="${'thymeleaf text 출력 테스트'}"></h2>
-
+<h1>Hello Thymeleaf!</h1>
+<h2 data-th-text="${'thymeleaf text 출력 테스트'}"></h2>
+<hr>
+<p data-th-text="${deptVO}"></p>
+<p data-th-text="${deptVO}"></p>
+<hr>
+<ul>
+	<li data-th-text="${deptVO.deptno}"></li>
+	<li data-th-text="${deptVO.dname}"></li>
+	<li data-th-text="${deptVO.loc}"></li>
+</ul>
+<hr>
+<ul data-th-inline="text">
+	<li>inline</li>
+	<li>[[${deptVO.deptno}]]</li>
+	<li>[[${deptVO.dname}]]</li>
+	<li>[[${deptVO.loc}]]</li>
+</ul>
 </body>
 </html>

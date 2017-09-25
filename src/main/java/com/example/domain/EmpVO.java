@@ -1,6 +1,7 @@
 package com.example.domain;
 
 import java.math.BigDecimal;
+import java.math.BigInteger;
 import java.util.Date;
 
 import javax.persistence.Entity;
@@ -24,7 +25,7 @@ import lombok.ToString;
 @Entity
 @Table(name="tbl_emp")
 @Data
-@ToString(exclude={"mgr","dept"})
+@ToString(exclude ={"mgr", "dept"})
 public class EmpVO {
 	
 	public enum Gender {
@@ -32,18 +33,17 @@ public class EmpVO {
 	}
 	
 	@Id
-	@TableGenerator(name="idGen", table="id_gen", 
-						pkColumnName="seq_name",
-						valueColumnName="nextval",
-						allocationSize=10, initialValue=7000)
+	@TableGenerator(name="idGen", table="id_gen", pkColumnName="seq_name", valueColumnName="nextval",
+	allocationSize=10, initialValue=7000)
 	@GeneratedValue(strategy=GenerationType.TABLE, generator="idGen")
 	private Integer empno;
 	private String ename;
 	@Enumerated(EnumType.STRING)
-	private Gender gender;
+	private Gender gender;	// enum 타입을 그냥 하면 정수로 만들어짐(enum의 index덕분)
 	private String job;
 	
 	@OneToOne(fetch=FetchType.LAZY)
+//	@OneToOne
 	@JoinColumn(name="mgr")
 	private EmpVO mgr;
 	
@@ -52,7 +52,6 @@ public class EmpVO {
 	private BigDecimal sal;
 	private BigDecimal comm;
 //	private Integer deptno;
-	
 	@ManyToOne(fetch=FetchType.LAZY)
 	@JoinColumn(name="deptno")
 	private DeptVO dept;
